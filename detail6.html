@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Midnight Library</title>
+        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: lavender;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 40px 0;
+        }
+
+        .btn-pinjam-custom {
+            background-color: #C3C3F0 !important; 
+            color: black !important;
+            border: 1px solid #8888b5 !important;
+            font-family: Arial, sans-serif !important; /* Menggunakan font Arial */
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-pinjam-custom:hover {
+            background-color: #a8a8d9 !important;
+            color: black !important;
+            transform: translateY(-1px); /* Efek sedikit terangkat saat disentuh */
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <main class="container">
+        
+        <div class="mb-4">
+            <h4 class="fw-bold mb-2">The Midnight Library</h4>
+            <hr style="border-top: 1px solid black; opacity: 1;">
+        </div>
+        
+        <div class="row align-items-center">
+            
+            <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+                <img src="cover6.jpg" class="img-fluid" alt="Cover Buku The Midnight Library" style="width: 300px; height: 450px; object-fit: cover; max-width: 100%;">
+            </div>
+            
+            <div class="col-12 col-md-8">
+                <h5 class="fw-bold mb-3">Deskripsi Buku</h5>
+                
+                <div style="text-align: justify; font-size: 1.05rem;">
+                    <p> 
+                        <span class="fw-bold">Sinopsis:</span><br>
+                        Di antara kehidupan dan kematian terdapat sebuah perpustakaan yang jumlah bukunya tak terhingga. Tiap-tiap buku menyediakan satu kesempatan untuk mencoba kehidupan lain yang bisa dijalani sehingga kau bisa melihat apa yang terjadi kalau kau mengambil keputusan-keputusan berbeda... Akankah kau melakukan apa pun secara berbeda jika kau mendapat kesempatan untuk membatalkan penyesalan-penyesalanmu? Benarkah kehidupan lain akan jauh lebih baik?<br>
+                        Nora Seed harus membuat keputusan. Ia dihadapkan pada kemungkinan bisa mengubah hidupnya, memiliki karier yang berbeda, tidak putus dari mantan kekasih, dan mewujudkan mimpinya sebagai glasiolog. Ia menjelajahi Perpustakaan Tengah Malam untuk memutuskan apa sebenarnya yang menjadikan hidup pantas dijalani. Setelah kehidupan yang diisi berbagai penyesalan dan kegagalan, akankah Nora Seed akhirnya mendapatkan kehidupan yang bisa memberinya kebahagiaan sejati?<br>
+                    <p>    
+                        <span class="fw-bold">Penulis:</span><br>
+                        Matt Haig
+                    </p>
+
+                    <p>
+                        <span class="fw-bold">Tahun Terbit:</span><br>
+                        2020
+                    </p>
+
+                    <p>
+                        <span class="fw-bold">Kategori:</span><br>
+                        Fiksi, Fantasi, Pengembangan diri
+                    </p>
+                </div>
+            
+                <div class="mt-5 text-center">
+                    <a href="riwayat.html" class="btn btn-pinjam-custom px-3 py-2 fw-bold" style="letter-spacing: 1px;" onclick="alert('Buku berhasil dipinjam!');">PINJAM</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-5 pt-3">
+            <a href="home.html" class="text-decoration-none text-dark fw-bold">
+                ← Kembali
+            </a>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

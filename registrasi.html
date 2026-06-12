@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .form-control {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+    <script>
+        function validasiRegistrasi() {
+            var nama = document.forms["formReg"]["nama"].value;
+            var email = document.forms["formReg"]["email"].value;
+            var password = document.forms["formReg"]["psw"].value;
+            var konfirmasi = document.forms["formReg"]["konf_psw"].value;
+
+            if (nama === "") {
+                alert("Nama lengkap tidak boleh kosong!");
+                return false;
+            } else if (email === "") {
+                alert("E-mail tidak boleh kosong!");
+                return false;
+            } else if (password === "") {
+                alert("Password tidak boleh kosong!");
+                return false;
+            } else if (password !== konfirmasi) {
+                alert("Konfirmasi password tidak cocok!");
+                return false;
+            } else {
+                alert("Registrasi berhasil! Silakan login.");
+                window.location.href = "login.html";
+            }
+        }
+
+        // Logika Baru: Password Tersembunyi = Mata Tertutup (bi-eye-slash), Terlihat = Mata Terbuka (bi-eye)
+        function togglePassword(inputId, iconId) {
+            var inputField = document.getElementById(inputId);
+            var icon = document.getElementById(iconId);
+            
+            if (inputField.type === "password") {
+                inputField.type = "text";
+                icon.classList.remove("bi-eye-slash");
+                icon.classList.add("bi-eye"); 
+            } else {
+                inputField.type = "password";
+                icon.classList.remove("bi-eye");
+                icon.classList.add("bi-eye-slash"); 
+            }
+        }
+    </script>
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100" style="background-color: lavender;">
+
+    <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+        <h2 class="text-center mb-2 fw-bold">BookVerse</h2>
+        <p class="text-center text-muted mb-4" style="font-size: 1.05rem;">Registrasi Akun Baru</p>
+        
+        <form name="formReg" method="post">
+            <div class="mb-3">
+                <label class="form-label" style="font-size: 1.1rem;">Nama Lengkap</label>
+                <input type="text" name="nama" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" style="font-size: 1.1rem;">E-mail</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" style="font-size: 1.1rem;">Password</label>
+                <div class="position-relative">
+                    <input type="password" name="psw" id="psw" class="form-control" style="padding-right: 40px;" required>
+                    <button type="button" class="btn position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent pe-3" onclick="togglePassword('psw', 'iconPsw')" style="z-index: 5;">
+                        <i class="bi bi-eye-slash text-secondary" id="iconPsw"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" style="font-size: 1.1rem;">Konfirmasi Password</label>
+                <div class="position-relative">
+                    <input type="password" name="konf_psw" id="konf_psw" class="form-control" style="padding-right: 40px;" required>
+                    <button type="button" class="btn position-absolute end-0 top-50 translate-middle-y border-0 bg-transparent pe-3" onclick="togglePassword('konf_psw', 'iconKonfPsw')" style="z-index: 5;">
+                        <i class="bi bi-eye-slash text-secondary" id="iconKonfPsw"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <button type="button" class="btn btn-dark w-100 mb-3" onclick="validasiRegistrasi()">Daftar</button>
+            
+            <div class="text-center">
+                <span style="font-size: 1.05rem;">Sudah punya akun?</span><br>
+                <a href="login.html" class="text-decoration-none">Login di sini</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

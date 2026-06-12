@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baca Buku</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: lavender;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 40px;
+            padding-bottom: 60px;
+        }
+
+        /* Memperlebar batas maksimal halaman baca */
+        .container-baca {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Kotak utama yang menyerupai buku terbuka */
+        .book-container {
+            background-color: #fffdf8; 
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #dcdcdc;
+        }
+
+        /* Pengaturan teks paragraf */
+        .page-text {
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #222;
+        }
+
+        /* Garis pemisah tengah ala lipatan buku */
+        .page-divider {
+            border-left: 1px solid #ccc;
+        }
+
+        /* Membuat garis tengah berubah menjadi horizontal saat diakses via HP */
+        @media (max-width: 767px) {
+            .page-divider {
+                border-left: none;
+                border-top: 1px solid #ccc;
+            }
+        }
+
+        /* Styling tombol Kembalikan agar serasi dengan halaman lain */
+        .btn-kembalikan-custom {
+            background-color: #C3C3F0;
+            color: black;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            border: 1px solid #8888b5;
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .btn-kembalikan-custom:hover {
+            background-color: #a8a8d9;
+            color: black;
+            transform: translateY(-1px);
+        }
+
+        /* Navigasi Prev/Next */
+        .nav-btn {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container container-baca">
+        
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-2 px-2">
+            <h2 class="fw-bold m-0">Laut Bercerita</h2>
+            
+            <div class="text-end mt-3 mt-md-0" style="font-family: Arial, sans-serif;">
+                <span class="fw-bold" style="font-size: 0.95rem;">Sisa Waktu : 1 Hari</span><br>
+                <a href="riwayat.html" class="btn-kembalikan-custom mt-2">KEMBALIKAN</a>
+            </div>
+        </div>
+
+        <hr class="border-dark border-2 opacity-100 mb-4">
+
+        <div class="book-container p-4 p-md-4 mb-4">
+            <div class="row g-0">
+                
+                <div class="col-12 col-md-6 pe-md-4 pb-4 pb-md-0 d-flex flex-column">
+                    <div class="flex-grow-1 page-text mt-2">
+                        <br><br><br><br><br>
+                        <h4 class="fw-bold mb-4">Prolog</h4>
+                        <p class="fst-italic ps-4">
+                            Matilah engkau mati<br>
+                            Kau akan lahir berkali-kali....
+                        </p>
+                        <p>
+                            SANG penyair pernah menulis sebait puisi ini di atas secarik kertas lusuh. Saat itu dia masih berambut panjang menggapai pundak dan bersuara parau karena banyak berorasi di hadapan buruh. Ia menyelipkannya ke dalam sebuah buku tulis bersampul hitam dan mengatakan itulah hadiah darinya untuk ulang tahunku yang ke-25. Sembari mengepulkan asap rokoknya yang menggelung-gelung ke udara, dia mengatakan aku harus selalu bangkit, meski aku mati.
+                        </p>
+                        <p>
+                            Tetapi hari ini, aku akan mati.<br>
+                            Aku tak tahu apakah aku bisa bangkit.
+                        </p>
+                        <p>
+                            Setelah hampir tiga bulan disekap dalam gelap, mereka membawaku ke sebuah tempat. Hitam. Kelam. Selama tiga bulan
+                        </p>
+                    </div>
+                    <div class="text-center mt-5 text-muted fw-bold" style="font-family: Times New Roman, serif;">1</div>
+                </div>
+
+                <div class="col-12 col-md-6 ps-md-4 pt-4 pt-md-0 page-divider d-flex flex-column">
+                    <div class="flex-grow-1 page-text mt-md-2">
+                        <p>
+                            mataku dibebat kain apak yang hanya sesekali dibuka saat aku berurusan dengan tinja dan kencing.
+                        </p>
+                        <p>
+                            Aku ingat pembicaraanku dengan Sang penyair. Dia berkata bahwa dia tak takut pada gelap. Karena dalam hidup, ada terang dan ada gelap. Ada perempuan dan ada lelaki. "Gelap adalah bagian dari alam," kata Sang penyair. Tetapi jangan sampai kita mencapai titik kelam, karena kelam adalah tanda kita sudah menyerah. Kelam adalah sebuah kepahitan, satu titik ketika kita merasa hidup tak bisa dipertahankan lagi.
+                        </p>
+                        <p>
+                            Aku tak tahu apakah saat ini aku sedang mengalami kegelapan. Atau kekelaman.
+                        </p>
+                        <p>
+                            Mataku dibebat. Tanganku diborgol. Apakah ini gelap yang kelak menjadi pagi yang lamat-lamat mengurai cahaya matahari pagi; atau gelap seperti sumur yang tak menjanjikan dasar?
+                        </p>
+                        <p>
+                            Selama sejam kami berputar-putar, aku sudah bisa menebak ada empat lelaki yang mendampingiku. Setelah berbulan-bulan mereka sekap di tempat yang gelap, aku sudah mulai mengenal bau tubuh mereka. Satu lelaki menyetir yang jarang bersuara. Seseorang di sebelahnya jarang mengeluarkan komentar kecuali jika harus membentak kedua lelaki yang mengapit di kiri kananku di kursi belakang. Dialah si Mata Merah, satu-satunya dari mereka yang pernah kulihat wajahnya dan kukenali dari bau rokok kreteknya yang menghambur dari mulutnya. Di sebelah kanan dan kiriku pasti kedua lelaki besar yang biasa kusebut Manusia Pohon dan si Raksasa yang mengirim bau keringat tengik. Inilah celakanya jika sejak kecil kita diajarkan menajamkan indra penciuman karena Ibu adalah seorang koki yang dahsyat. Dalam sekejap aku bisa membedakan aroma tubuh satu orang dengan yang lainnya.
+                        </p>
+                    </div>
+                    <div class="text-center mt-5 text-muted fw-bold" style="font-family: Times New Roman, serif;">2</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between px-3">
+            <a href="detail4.html" class="nav-btn">&laquo; Prev Page</a>
+            <a href="#" class="nav-btn">Next Page &raquo;</a>
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

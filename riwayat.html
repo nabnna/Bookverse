@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse</title>
+        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: lavender;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 65px;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling */
+        .navbar-custom {
+            font-family: 'Poppins', sans-serif;
+            background-color: lavender;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .navbar-brand {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: black !important;
+            text-decoration: none !important; 
+        }
+
+        .navbar-nav .nav-link {
+            color: black !important; 
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 6px 15px !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+        }
+
+        .form-control {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input[type="search"]::-webkit-search-cancel-button {
+            filter: brightness(0);
+            cursor: pointer;
+        }
+
+        .fixed-title-container { 
+            position: fixed; 
+            top: 60px; 
+            width: 100%; 
+            background-color: lavender; 
+            z-index: 990; 
+        }
+
+        main.container { margin-top: 2.5rem !important; }
+
+        .tabel-container {
+            background-color: white; 
+            border-radius: 12px;     /* Membuat sudut menjadi tumpul */
+            border: 1.4px solid black; /* Border luar hitam 1px */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+            overflow: hidden;        /* Memotong isi tabel yang keluar dari sudut tumpul */
+            margin-top: 40px;
+        }
+
+        .table-custom {
+            margin-bottom: 0;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        /* Header Tabel (Judul Kolom) */
+        .table-custom thead th {
+            background-color: #C3C3F0 !important; /* Warna disamakan dengan tombol kembalikan */
+            color: black !important;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid black !important; /* Garis bawah header */
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            padding: 16px;
+        }
+
+        /* Isi Tabel (Baris Data) */
+        .table-custom tbody tr {
+            background-color: white !important; 
+            transition: background-color 0.2s ease; 
+        }
+
+        .table-custom tbody td {
+            border-bottom: 1px solid black !important; /* Garis pemisah horizontal hitam 1px */
+            border-top: none !important;
+            border-left: none !important;
+            border-right: none !important;
+            padding: 16px;
+            color: black;
+            vertical-align: middle;
+        }
+
+        /* Menghapus garis bawah pada baris paling akhir agar sejajar dengan border kontainer */
+        .table-custom tbody tr:last-child td {
+            border-bottom: none !important;
+        }
+
+        /* Efek Hover (Saat disentuh mouse) */
+        .table-custom tbody tr:hover td {
+            background-color: #f8f8fd !important; 
+        }
+
+        /* Styling Tombol Kembalikan */
+        .btn-kembalikan-custom {
+            background-color: #C3C3F0 !important; 
+            color: black !important;
+            border: 1px solid #a8a8d9 !important;
+            font-family: Arial, sans-serif !important; 
+            font-weight: bold;
+            font-size: 0.7rem !important;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-kembalikan-custom:hover {
+            background-color: #a8a8d9 !important; 
+            transform: translateY(-1px); 
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-custom py-2">
+            <div class="container-fluid px-4">
+                
+                <a class="navbar-brand fs-4" href="home.html">BookVerse</a>
+                
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    
+                    <div class="mx-lg-auto my-2 my-lg-0 w-100" style="max-width: 350px;">
+                        <form class="position-relative" action="koleksi.html" method="GET">
+                            <input class="form-control rounded-2 pe-5" type="search" name="cari" placeholder="Cari judul buku..." style="border: 1px solid #000; font-family: Arial, sans-serif;">
+                            <button class="btn position-absolute end-0 top-50 translate-middle-y border-0 rounded-2 pe-3" type="submit" style="color: black; z-index: 5;">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <ul class="navbar-nav text-center ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="home.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="koleksi.html">KOLEKSI</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="riwayat.html">RIWAYAT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">PROFIL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">LOGOUT</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="fixed-title-container px-4 pt-3">
+        <h4 class="fw-normal text-center mb-2">Riwayat Peminjaman</h4>
+        <hr class="text-dark m-0" style="opacity: 1; border-top: 1px solid #000;">
+    </div>
+
+    <main class="container mt-4 mb-5">
+        
+        <div class="tabel-container">
+            <table class="table text-center align-middle table-custom">
+                <thead>
+                    <tr>
+                        <th width="30%">Judul</th>
+                        <th width="25%">Tanggal Pinjam</th>
+                        <th width="25%">Batas Waktu</th>
+                        <th width="20%">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="detail6.html" class="text-decoration-none" style="color: black; font-size: 1.05rem;">The Midnight Library</a></td>
+                        <td style="font-family: Arial;">01/01/2026</td>
+                        <td style="font-family: Arial;">07/01/2026</td>
+                        <td style="font-family: Arial;">Selesai <br>
+                            <small class="text-muted" style="font-size: 0.85rem; font-family: Arial, sans-serif;">(Auto Returned)</small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="detail5.html" class="text-decoration-none" style="color: black; font-size: 1.05rem;">Psychology of Money</a></td>
+                        <td style="font-family: Arial;">07/01/2026</td>
+                        <td style="font-family: Arial;">14/01/2026</td>
+                        <td style="font-family: Arial;">Selesai</td>
+                    </tr>
+                    <tr id="baris-laut">
+                        <td><a href="detail4.html" class="text-decoration-none" style="color: black; font-size: 1.05rem;">Laut Bercerita</a></td>
+                        <td style="font-family: Arial;">08/01/2026</td>
+                        <td style="font-family: Arial;">15/01/2026</td>
+                        <td style="font-family: Arial;" id="status-laut">
+                            Dipinjam<br>
+                            <button onclick="kembalikan()" class="btn btn-sm btn-kembalikan-custom mt-1">KEMBALIKAN</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </main>
+
+    <script>
+        function kembalikan() {
+            var konfirmasi = confirm("Apakah Anda ingin mengembalikan buku ini?");
+            if (konfirmasi) {
+                document.getElementById('status-laut').innerHTML = 'Selesai <br><small class="text-muted" style="font-size: 0.85rem; font-family: Arial, sans-serif;">(Dikembalikan Manual)</small>';
+            }
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse</title>
+        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: lavender;
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            padding-top: 65px;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling */
+        .navbar-custom {
+            font-family: 'Poppins', sans-serif;
+            background-color: lavender;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Warna huruf logo/merk menjadi hitam murni tanpa garis bawah */
+        .navbar-brand {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: black !important;
+            text-decoration: none !important; 
+        }
+
+        /* Warna huruf menu navbar menjadi hitam murni */
+        .navbar-nav .nav-link {
+            color: black !important; 
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 6px 15px !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 8px;
+        }
+        
+        /* Font Arial khusus form pencarian */
+        .form-control {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input[type="search"]::-webkit-search-cancel-button {
+            filter: brightness(0);
+            cursor: pointer;
+        }
+
+        /* Styling Tombol PINJAM dibuat sama dengan KEMBALIKAN */
+        .btn-pinjam-custom {
+            background-color: #C3C3F0 !important; 
+            color: black !important;
+            border: 1px solid #8888b5 !important;
+            font-family: 'Arial', sans-serif !important; /* Font diubah menjadi Arial */
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-pinjam-custom:hover {
+            background-color: #a8a8d9 !important;
+            color: black !important;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-custom py-2">
+            <div class="container-fluid px-4">
+                
+                <a class="navbar-brand fs-4" href="home.html">BookVerse</a>
+                
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    
+                    <div class="mx-lg-auto my-2 my-lg-0 w-100" style="max-width: 350px;">
+                        <form class="position-relative" action="koleksi.html" method="GET">
+                            <input class="form-control rounded-2 pe-5" type="search" name="cari" placeholder="Cari judul buku..." style="border: 1px solid #000;">
+                            <button class="btn position-absolute end-0 top-50 translate-middle-y border-0 rounded-2 pe-3" type="submit" style="color: black; z-index: 5;">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <ul class="navbar-nav text-center ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link active" href="home.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="koleksi.html">KOLEKSI</a></li>
+                        <li class="nav-item"><a class="nav-link" href="riwayat.html">RIWAYAT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">PROFIL</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html">LOGOUT</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container flex-grow-1 mt-3">
+        <div class="alert alert-warning shadow-sm border-0" role="alert" style="box-shadow: 0 2px 10px rgba(0,0,0,1);">
+            ⚠️ <b>Notice:</b> Buku "Laut Bercerita" akan berakhir besok.
+        </div>
+
+        <h4 class="mb-4 mt-4 fw-bold">Daftar E-Book Terbaru</h4>
+        
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-12 col-md-4 col-lg-3 card-box">
+                <div class="card border-0 bg-transparent mx-auto" style="width: 220px;">
+                    <img src="cover1.jpg" class="card-img-top rounded-0 shadow-sm" alt="Filosofi Teras" style="height: 330px; object-fit: cover;">
+                        <a href="detail1.html" class="stretched-link"></a>
+                    <div class="card-body px-0 py-3 text-center">
+                        <button class="btn btn-pinjam-custom px-3 py-2 fw-bold position-relative z-3" style="letter-spacing: 1px;" onclick="prosesPinjam('Filosofi Teras', 'detail1.html')">PINJAM</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-3 card-box">
+                <div class="card border-0 bg-transparent mx-auto" style="width: 220px;">
+                    <img src="cover2.jpg" class="card-img-top rounded-0 shadow-sm" alt="Misteri Soliter" style="height: 330px; object-fit: cover;">
+                        <a href="detail2.html" class="stretched-link"></a>
+                    <div class="card-body px-0 py-3 text-center">
+                        <button class="btn btn-pinjam-custom px-3 py-2 fw-bold position-relative z-3" style="letter-spacing: 1px;" onclick="prosesPinjam('Misteri Soliter', 'detail2.html')">PINJAM</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-4 col-lg-3 card-box">
+                <div class="card border-0 bg-transparent mx-auto" style="width: 220px;">
+                    <img src="cover3.jpg" class="card-img-top rounded-0 shadow-sm" alt="Negeri 5 Menara" style="height: 330px; object-fit: cover;">
+                        <a href="detail3.html" class="stretched-link"></a>
+                    <div class="card-body px-0 py-3 text-center">
+                        <button class="btn btn-pinjam-custom px-3 py-2 fw-bold position-relative z-3" style="letter-spacing: 1px;" onclick="prosesPinjam('Negeri 5 Menara', 'detail3.html')">PINJAM</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Fungsi universal untuk mengirim data peminjaman
+        function prosesPinjam(judulBuku, linkDetail) {
+            let riwayat = JSON.parse(localStorage.getItem("dataPeminjaman")) || [];
+
+            // Buat format tanggal hari ini (tglPinjam) dan 7 hari ke depan (batasWaktu)
+            let today = new Date();
+            let due = new Date();
+            due.setDate(today.getDate() + 7);
+
+            function formatTgl(date) {
+                let d = String(date.getDate()).padStart(2, '0');
+                let m = String(date.getMonth() + 1).padStart(2, '0');
+                let y = date.getFullYear();
+                return d + '/' + m + '/' + y;
+            }
+
+            // Memasukkan buku ke baris paling atas tabel
+            riwayat.unshift({
+                judul: judulBuku,
+                url: linkDetail,
+                tglPinjam: formatTgl(today),
+                batasWaktu: formatTgl(due),
+                status: "Dipinjam",
+                note: ""
+            });
+
+            localStorage.setItem("dataPeminjaman", JSON.stringify(riwayat));
+            alert('Buku "' + judulBuku + '" berhasil dipinjam!');
+            window.location.href = "riwayat.html"; // Lempar user ke halaman riwayat
+        }
+
+        // Fungsi Pencarian (Filter Buku)
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const keyword = urlParams.get('cari');
+
+            if (keyword) {
+                const searchInput = document.querySelector('input[name="cari"]');
+                if (searchInput) searchInput.value = keyword;
+
+                const lowerKeyword = keyword.toLowerCase();
+                const cards = document.querySelectorAll('.card-box');
+                
+                cards.forEach(function(card) {
+                    const imgElement = card.querySelector('img');
+                    
+                    if (imgElement) {
+                        const altText = imgElement.getAttribute('alt');
+                        
+                        if (altText) {
+                            const title = altText.toLowerCase();
+                            if (title.includes(lowerKeyword)) {
+                                card.style.display = ""; 
+                            } else {
+                                card.style.display = "none"; 
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
